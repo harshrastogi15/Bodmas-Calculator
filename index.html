@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Solver</title>
+    <link rel="icon" href="./public/calicon.jpg" type="image/icon type">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./module/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container my-2 mx-auto">
+        <h1 class="text-center">HR Bracket solver</h1>
+        <div class="row py-2 mx-auto boxmodel">
+            <div class="col-md-6 col-12 order-md-0 order-1">
+                <input type="text" id="typeinputid" class="typeinputclass" placeholder="Write Equation">
+                <button class="eqbutton" onclick="takeinput()">Submit Equation</button>
+                <h6 class="inputclass" id="inputid"></h6>
+                <div class="row g-0 mx-auto my-3">
+                    <div class="col-6">
+                        <button class="inbutton" id="" onclick="ClearAll()">All Clear</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="inbutton" id="" onclick="Clearone()">Clear one</button>
+                    </div>
+                </div>
+                <div class="row g-0 mx-auto my-3">
+                    <div class="col-2 ">
+                        <button class="inbutton" id="{" onclick="getelement(this.id)">{</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="}" onclick="getelement(this.id)">}</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="1" onclick="getelement(this.id)">1</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="2" onclick="getelement(this.id)">2</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="3" onclick="getelement(this.id)">3</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="+" onclick="getelement(this.id)">&#43</button>
+                    </div>
+                </div>
+                <div class="row g-0 mx-auto my-3">
+                    <div class="col-2 ">
+                        <button class="inbutton" id="(" onclick="getelement(this.id)">(</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id=")" onclick="getelement(this.id)">)</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="4" onclick="getelement(this.id)">4</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="5" onclick="getelement(this.id)">5</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="6" onclick="getelement(this.id)">6</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="-" onclick="getelement(this.id)">&#8722</button>
+                    </div>
+                </div>
+                <div class="row g-0 mx-auto my-3">
+                    <div class="col-2 ">
+                        <button class="inbutton" id="[" onclick="getelement(this.id)">[</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="]" onclick="getelement(this.id)">]</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="7" onclick="getelement(this.id)">7</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="8" onclick="getelement(this.id)">8</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="9" onclick="getelement(this.id)">9</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="*" onclick="getelement(this.id)">&#215</button>
+                    </div>
+                </div>
+                <div class="row g-0 mx-auto my-3">
+                    <div class="col-2 ">
+                        <button class="inbutton" id="{" onclick="getelement(this.id)">{</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="}" onclick="getelement(this.id)">}</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="00" onclick="getelement(this.id)">00</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="0" onclick="getelement(this.id)">0</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="." onclick="getelement(this.id)">.</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="inbutton" id="/" onclick="getelement(this.id)">&#xF7</button>
+                    </div>
+                </div>
+                <button class="responebutton" id="=" onclick="res()">Evaluate (=)</button>
+            </div>
+            <div class="col-md-6 g-0 col-12 order-md-1 order-0 outputpart">
+                <h4 id="switch">Precautions</h4>
+                <div id="outputid">
+                    <ul class="mainline">
+                        <li>This website try to solve according to<span class="des"> BODMAS rule.</span></li>
+                        <li>Close every bracket that you open.</li>
+                        <li>This would not do parentheses matching.</li>
+                        <li>Use only " (){}[]. ans Number(0-9) "</li>
+                        <li>BODMAS Stand for</li>
+                        <ul style="list-style: disc;">
+                            <Li>B - Bracket</Li>
+                            <Li>O - Of </Li>
+                            <Li>D - Divide</Li>
+                            <Li>M - Multiplication</Li>
+                            <Li>A - Addition</Li>
+                            <li>S - Subtration</li>
+                        </ul>
+                        <li>BODMAS rule execute from B to S</li>
+                        <li>Here ( O - of ) we have to replace of by &#215 so we directly use &#215</li>
+                    </ul>
+                </div>
+                <div id="answer"></div>
+            </div>
+        </div>
+        <div class="text-center footer">
+            <h6>
+                Design By Harsh Rastogi
+                <p>
+                    <a href="https://harshrastogi15.github.io/Personal/">Portfolio</a>
+                </p>
+            </h6>
+            <p>
+                Copyright reserved
+            </p>
+        </div>
+    </div>
+    <script src="./module/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/alsolve.js"></script>
+    <script src="./js/bracket.js"></script>
+</body>
+
+</html>

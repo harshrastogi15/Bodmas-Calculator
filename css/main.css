@@ -1,0 +1,158 @@
+:root{
+    --button-color:rgb(200, 200, 199);
+}
+
+body{
+    background-image: linear-gradient(to right, rgb(221, 214, 214),rgb(245, 240, 240),rgb(211, 201, 201));
+}
+
+.boxmodel{
+    border:2px solid var(--button-color);
+}
+
+#typeinputid{
+    width: 100%;
+    margin: 5% auto 2% auto;
+    padding: 10px;
+    font-weight: 400;
+    background-color: rgb(238, 238, 228);
+    border: 2px solid var(--button-color);
+}
+
+#typeinputid:focus{
+    border-radius: 2px solid var(--button-color);
+}
+
+.eqbutton{
+    width: 100%;
+    background-color: var(--button-color);
+    border: 2px solid var(--button-color);
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.eqbutton:hover{
+    border: 2px inset rgb(224, 224, 223);
+    font-weight: 400;
+}
+
+#inputid{
+    width: 100%;
+    padding: 10px;
+    margin: 10px auto 5px auto;
+    border: 2px solid var(--button-color);
+    font-size: 20px;
+    height: 70px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.inbutton{
+    background-color: var(--button-color);
+    border:1px solid var(--button-color);
+    width: 98%;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.inbutton:hover{
+    font-weight: 300;
+}
+
+.responebutton{
+    width: 100%;
+    background-color: var(--button-color);
+    border: 2px solid var(--button-color);
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 500;
+    margin: 5px auto;
+}
+
+.responebutton:hover{
+    border: 2px inset rgb(224, 224, 223);
+    font-weight: 400;
+}
+
+.outputpart{
+    border-left: 3px solid var(--button-color);
+}
+
+#switch{
+    margin: auto 4px;
+}
+
+#outputid{
+    max-height:440px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: auto;
+}
+
+.mainline{
+    font-size: 20px;
+    text-decoration: none;
+    list-style: none;
+    word-spacing: 10px;
+    clear: both;
+    font-weight: 600;
+    width: 100%;
+    overflow-x: auto;
+    /* border: 2px solid black; */
+    background-color: var(--button-color);
+    padding: 4px 16px;
+}
+
+.partsol{
+    text-decoration: none;
+   list-style: inside;
+   float: right;
+   font-size: 18px;
+   margin: 10px;
+   overflow-x: auto;
+}
+
+.des{
+    /* background-color: red; */
+    padding: 4px;
+    color: white;
+    margin: 3px auto;
+}
+
+#answer{
+    background-color: var(--button-color);
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    min-height: 40px;
+
+}
+
+#answer p{
+    margin: 0px 20px 0px 20px;
+    width: fit-content;
+}
+
+.footer h6{
+    font-weight: 600;
+    font-size: 20px;
+}
+.footer h6 p a{
+    color: rgb(177, 177, 170);
+    text-decoration: none;
+}
+
+.footer p{
+    color: rgb(211, 211, 206);
+}
+
+@media (max-width:768px) {
+    .outputpart{
+        border-left: none;
+        border-bottom: 3px solid var(--button-color);
+    }
+}
