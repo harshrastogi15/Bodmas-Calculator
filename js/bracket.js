@@ -93,14 +93,14 @@ function res() {
       // 
       let left=0,right=0;
       if(i>0){
-        if(equation[i-1]=='+' || equation[i-1]=='-' || equation[i-1]=='*' || equation[i-1]=='/' ){
+        if(equation[i-1]=='+' || equation[i-1]=='-' || equation[i-1]=='*' || equation[i-1]=='/' || equation[i-1] === "{" || equation[i-1] === "(" || equation[i-1] === "["){
           left=0;
         }else{
           left=1;
         }
       }
       if(j<equation.length-1){
-        if(equation[j+1]=='+' || equation[j+1]=='-' || equation[j+1]=='*' || equation[j+1]=='/' ){
+        if(equation[j+1]=='+' || equation[j+1]=='-' || equation[j+1]=='*' || equation[j+1]=='/' || equation[j+1] === "}" || equation[j+1] === ")" || equation[j+1] === "]"){
           right=0;
         }else{
           right=1;
